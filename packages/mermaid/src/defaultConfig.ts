@@ -251,6 +251,9 @@ const config: RequiredDeep<MermaidConfig> = {
     ...defaultConfigJson.pie,
     useWidth: 984,
   },
+  neuralnet: {
+    ...defaultConfigJson.neuralnet,
+  },
   xyChart: {
     ...defaultConfigJson.xyChart,
     useWidth: undefined,

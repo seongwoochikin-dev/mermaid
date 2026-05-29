@@ -301,6 +301,8 @@ properties:
     $ref: '#/$defs/ErDiagramConfig'
   pie:
     $ref: '#/$defs/PieDiagramConfig'
+  neuralnet:
+    $ref: '#/$defs/NeuralnetDiagramConfig'
   quadrantChart:
     $ref: '#/$defs/QuadrantChartConfig'
   xyChart:
@@ -1118,6 +1120,25 @@ $defs: # JSON Schema definition (maybe we should move these to a separate file)
         description: |
           Axial position of slice's label from zero at the center to 1 at the outside edges.
         default: 0.75
+
+  NeuralnetDiagramConfig:
+    title: Neuralnet Diagram Config
+    allOf: [{ $ref: '#/$defs/BaseDiagramConfig' }]
+    type: object
+    unevaluatedProperties: false
+    properties:
+      layerSpacing:
+        type: number
+        description: Gap (px) between adjacent layer boxes.
+        default: 60
+      boxWidth:
+        type: number
+        description: Default width (px) of a layer box.
+        default: 140
+      boxHeight:
+        type: number
+        description: Default height (px) of a layer box.
+        default: 50
 
   QuadrantChartConfig:
     title: Quadrant Chart Config

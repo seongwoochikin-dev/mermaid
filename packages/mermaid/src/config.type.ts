@@ -225,6 +225,7 @@ export interface MermaidConfig {
   state?: StateDiagramConfig;
   er?: ErDiagramConfig;
   pie?: PieDiagramConfig;
+  neuralnet?: NeuralnetDiagramConfig;
   quadrantChart?: QuadrantChartConfig;
   xyChart?: XYChartConfig;
   requirement?: RequirementDiagramConfig;
@@ -914,6 +915,24 @@ export interface PieDiagramConfig extends BaseDiagramConfig {
    *
    */
   textPosition?: number;
+}
+/**
+ * This interface was referenced by `MermaidConfig`'s JSON-Schema
+ * via the `definition` "NeuralnetDiagramConfig".
+ */
+export interface NeuralnetDiagramConfig extends BaseDiagramConfig {
+  /**
+   * Gap (px) between adjacent layer boxes.
+   */
+  layerSpacing?: number;
+  /**
+   * Default width (px) of a layer box.
+   */
+  boxWidth?: number;
+  /**
+   * Default height (px) of a layer box.
+   */
+  boxHeight?: number;
 }
 /**
  * This interface was referenced by `MermaidConfig`'s JSON-Schema
