@@ -14,6 +14,8 @@ import type {
   NetworkMode,
   RenderStyle,
 } from './neuralnetTypes.js';
+import type { NeuralnetDiagramConfig } from '../../config.type.js';
+import DEFAULT_CONFIG from '../../defaultConfig.js';
 
 let mode: NetworkMode = 'graph';
 let renderStyle: RenderStyle = 'block';
@@ -21,6 +23,12 @@ let nodes = new Map<string, NeuralNodeDef>();
 let nodeOrder: string[] = [];
 let edges: NeuralEdgeDef[] = [];
 let autoIdCounter = 0;
+
+const config: Required<NeuralnetDiagramConfig> = structuredClone(
+  DEFAULT_CONFIG.neuralnet as Required<NeuralnetDiagramConfig>
+);
+
+const getConfig = (): Required<NeuralnetDiagramConfig> => structuredClone(config);
 
 const clear = (): void => {
   mode = 'graph';
@@ -60,6 +68,8 @@ const addEdge = (edge: NeuralEdgeDef): void => {
 const getEdges = (): NeuralEdgeDef[] => edges;
 
 export const db: NeuralnetDB = {
+  getConfig,
+
   clear,
 
   setMode,

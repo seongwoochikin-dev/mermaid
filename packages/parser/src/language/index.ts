@@ -5,6 +5,7 @@ export {
   PacketBlock,
   Pie,
   PieSection,
+  Neuralnet,
   Architecture,
   GitGraph,
   Radar,

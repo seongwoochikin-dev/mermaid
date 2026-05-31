@@ -1,4 +1,5 @@
 import type { DiagramDB } from '../../diagram-api/types.js';
+import type { NeuralnetDiagramConfig } from '../../config.type.js';
 
 // ─── Layer Type Catalogue ───────────────────────────────────────────────────
 
@@ -118,6 +119,8 @@ export interface NeuralnetStyleOptions {
 // ─── Database Interface ──────────────────────────────────────────────────────
 
 export interface NeuralnetDB extends DiagramDB {
+  getConfig: () => Required<NeuralnetDiagramConfig>;
+
   clear: () => void;
 
   setMode: (mode: NetworkMode) => void;
